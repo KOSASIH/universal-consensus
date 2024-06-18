@@ -1,0 +1,6 @@
+{
+    "chain_id": "cosmos-hub-4",
+    "node_url": "https://rpc.cosmos.network",
+    "wallet_path": "/path/to/wallet",
+    "wallet_password": "your_wallet_password"
+}
