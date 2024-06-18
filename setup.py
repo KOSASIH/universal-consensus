@@ -11,7 +11,7 @@ URL = "https://github.com/KOSASIH/universal-consensus"
 
 # Define the dependencies
 INSTALL_REQUIRES = [
-    "flask==2.0.1",
+    "flask==2.2.5",
     "flask_restful==0.3.8",
     "flask_sqlalchemy==2.5.1",
     "sqlalchemy==1.4.25",
