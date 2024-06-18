@@ -1,0 +1,9 @@
+{
+  "provider_url": "https://mainnet.infura.io/v3/YOUR_PROJECT_ID",
+  "contract_path": "chainlink/contracts/Chainlink.json",
+  "contract_address": "0x...YOUR_CONTRACT_ADDRESS...",
+  "assets": {
+    "ETH": "0x...ETH_ASSET_ADDRESS...",
+    "BTC": "0x...BTC_ASSET_ADDRESS..."
+  }
+}
