@@ -1,0 +1,44 @@
+{
+  "network_profile": {
+    "name": "my_network",
+    "x-type": "hlfv1",
+    "description": "My Hyperledger Fabric network",
+    "version": "1.0",
+    "channels": {
+      "my_channel": {
+        "orderers": ["orderer.example.com"],
+        "peers": {
+          "peer0.org1.example.com": {
+            "endorsingPeer": true,
+            "chaincodeQuery": true,
+            "ledgerQuery": true
+          },
+          "peer1.org1.example.com": {
+            "endorsingPeer": true,
+            "chaincodeQuery": true,
+            "ledgerQuery": true
+          }
+        }
+      }
+    },
+    "organizations": {
+      "Org1": {
+        "mspid": "Org1MSP",
+        "peers": ["peer0.org1.example.com", "peer1.org1.example.com"]
+      }
+    },
+    "orderers": {
+      "orderer.example.com": {
+        "url": "grpc://orderer.example.com:7050"
+      }
+    },
+    "peers": {
+      "peer0.org1.example.com": {
+        "url": "grpc://peer0.org1.example.com:7051"
+      },
+      "peer1.org1.example.com": {
+        "url": "grpc://peer1.org1.example.com:7051"
+      }
+    }
+  }
+}
