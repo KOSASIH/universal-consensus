@@ -28,8 +28,8 @@ Universal Consensus is a blockchain-agnostic platform that provides a standardiz
 To install Universal Consensus, follow these steps:
 
 1. Clone the repository: git clone https://github.com/KOSASIH/universal-consensus.git
-2. Install the dependencies: pip install -r requirements.txt
-3. Run the platform: python setup.py
+2. Install the dependencies: `pip install -r requirements.txt`
+3. Run the platform: `python setup.py`
 
 ## Contributing
 
