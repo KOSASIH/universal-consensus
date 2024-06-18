@@ -1,0 +1,36 @@
+{
+  "name": "Elysium",
+  "blockchain_type": "ethereum",
+  "peers": [
+    {
+      "host": "localhost",
+      "port": 30301
+    },
+    {
+      "host": "localhost",
+      "port": 30302
+    },
+    {
+      "host": "localhost",
+      "port": 30303
+    }
+  ],
+  "consensus_algorithm": "proof-of-authority",
+  "block_time": 15,
+  "block_gas_limit": 10000000,
+  "block_reward": 5,
+  "galactic_nexus": {
+    "networks": [
+      {
+        "id": "network1",
+        "host": "localhost",
+        "port": 30304
+      },
+      {
+        "id": "network2",
+        "host": "localhost",
+        "port": 30305
+      }
+    ]
+  }
+}
