@@ -17,7 +17,7 @@ INSTALL_REQUIRES = [
     "sqlalchemy==1.4.25",
     "psycopg2-binary==2.9.1",
     "requests==2.25.1",
-    "cryptography==3.4.7",
+    "cryptography==42.0.4",
 ]
 
 # Define the testing dependencies
