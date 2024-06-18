@@ -1,0 +1,22 @@
+{
+  "name": "Nexusphere",
+  "blockchain_type": "blockchain",
+  "consensus_algorithm": "proof-of-authority",
+  "block_time": 15,
+"block_gas_limit": 10000000,
+  "block_reward": 5,
+  "nodes": [
+    {
+      "host": "localhost",
+      "port": 30301
+    },
+    {
+      "host": "localhost",
+      "port": 30302
+    },
+    {
+      "host": "localhost",
+      "port": 30303
+    }
+  ]
+}
