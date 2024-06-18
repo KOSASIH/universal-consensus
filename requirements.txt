@@ -1,0 +1,18 @@
+# Python dependencies
+python>=3.9
+flask==2.0.1
+flask_restful==0.3.8
+flask_sqlalchemy==2.5.1
+sqlalchemy==1.4.25
+psycopg2-binary==2.9.1
+requests==2.25.1
+cryptography==3.4.7
+
+# Additional dependencies for testing
+pytest==6.2.4
+pytest-cov==2.12.1
+coverage==6.3.2
+
+# Additional dependencies for development
+ipython==7.24.1
+jupyter==1.0.0
