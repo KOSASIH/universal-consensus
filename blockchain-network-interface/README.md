@@ -46,7 +46,7 @@ We welcome contributions to the Blockchain Network Interface! If you're interest
 
 ## License
 
-The Blockchain Network Interface is licensed under the MIT License. See LICENSE for more information.
+The Blockchain Network Interface is licensed under the Apache-2.0 License. See LICENSE for more information.
 
 ## Acknowledgments
 
