@@ -16,7 +16,7 @@ INSTALL_REQUIRES = [
     "flask_sqlalchemy==2.5.1",
     "sqlalchemy==1.4.25",
     "psycopg2-binary==2.9.1",
-    "requests==2.25.1",
+    "requests==2.32.2",
     "cryptography==42.0.4",
 ]
 
