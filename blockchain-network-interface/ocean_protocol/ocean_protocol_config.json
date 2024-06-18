@@ -1,0 +1,79 @@
+{
+  "provider": {
+    "url": "https://kovan.oceanprotocol.com",
+    "networkId": 42,
+    "gasPrice": "20.0",
+    "gasLimit": 8000000
+  },
+  "accounts": {
+    "owner": {
+      "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+      "privateKey": "0x0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "publisher": {
+      "address": "0x55241586d504697458648046974586480469745864074586480469745864",
+      "privateKey": "0x987654321098765432109876543210987654321098765432109876543210"
+    }
+  },
+  "assets": {
+    "dataset1": {
+      "name": "Dataset 1",
+      "description": "This is a sample dataset",
+      "url": "https://example.com/dataset1.csv",
+      "price": "10.0",
+      "datatokenSymbol": "DT1",
+      "datatokenName": "Dataset 1 Token",
+      "datatokenDecimals": 18
+    },
+    "dataset2": {
+      "name": "Dataset 2",
+      "description": "This is another sample dataset",
+      "url": "https://example.com/dataset2.csv",
+      "price": "20.0",
+      "datatokenSymbol": "DT2",
+      "datatokenName": "Dataset 2 Token",
+      "datatokenDecimals": 18
+    }
+  },
+  "datatokens": {
+    "DT1": {
+      "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+      "symbol": "DT1",
+      "name": "Dataset 1 Token",
+      "decimals": 18
+    },
+    "DT2": {
+      "address": "0x55241586d504697458648046974586480469745864074586480469745864",
+      "symbol": "DT2",
+      "name": "Dataset 2 Token",
+      "decimals": 18
+    }
+  },
+  "orders": {
+    "buy": {
+      "assetId": "dataset1",
+      "amount": "10.0",
+      "price": "15.0"
+    },
+    "sell": {
+      "assetId": "dataset2",
+      "amount": "20.0",
+      "price": "25.0"
+    }
+  },
+  "policies": {
+    "accessControl": {
+      "type": "accessControl",
+      "conditions": [
+        {
+          "type": "allow",
+          "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
+        },
+        {
+          "type": "deny",
+          "address": "0x55241586d504697458648046974586480469745864074586480469745864"
+        }
+      ]
+    }
+  }
+}
