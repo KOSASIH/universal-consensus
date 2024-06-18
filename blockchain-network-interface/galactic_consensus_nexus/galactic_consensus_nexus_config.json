@@ -1,0 +1,55 @@
+{
+  "network": {
+    "name": "Galactic Consensus Nexus",
+    "version": "1.0",
+    "node_id": "GCN-001",
+    "node_addr": "tcp://0.0.0.0:8080",
+    "seed_nodes": [
+      "tcp://seed-node-1.gcn:8080",
+      "tcp://seed-node-2.gcn:8080"
+    ]
+  },
+
+  "consensus": {
+    "algorithm": "Byzantine Fault Tolerance (BFT)",
+    "block_time": 10, // in seconds
+    "block_size": 1024, // in bytes
+    "difficulty_target": 1000,
+    "validator_nodes": [
+      "tcp://validator-node-1.gcn:8080",
+      "tcp://validator-node-2.gcn:8080"
+    ]
+  },
+
+  "transaction": {
+    "tx_fee": 0.01, // in GCN tokens
+    "tx_size_limit": 1024, // in bytes
+    "tx_propagation_timeout": 30, // in seconds
+    "tx_confirmation_timeout": 60, // in seconds
+  },
+
+  "blockchain": {
+    "blockchain_type": "Proof of Stake (PoS)",
+    "blockchain_size_limit": 1000000, // in bytes
+    "blockchain_pruning_interval": 1000, // in blocks
+    "blockchain_pruning_depth": 100, // in blocks
+  },
+
+  "security": {
+    " encryption_algorithm": "AES-256",
+    "digital_signature_algorithm": "ECDSA",
+    "private_key_path": "/path/to/private/key",
+    "public_key_path": "/path/to/public/key"
+  },
+
+  "logging": {
+    "log_level": "DEBUG",
+    "log_file_path": "/path/to/log/file"
+  },
+
+  "metrics": {
+    "metrics_enabled": true,
+    "metrics_port": 8081,
+    "metrics_interval": 10, // in seconds
+  }
+}
