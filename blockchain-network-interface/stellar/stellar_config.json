@@ -1,0 +1,32 @@
+{
+  "network": {
+    "horizon_url": "https://horizon.stellar.org",
+    "network_passphrase": "Public Global Stellar Network ; September 2015"
+  },
+  "accounts": {
+    "funding_account": {
+      "public_key": "GC2QQ32PJ37XV7XV7XV7XV7XV7XV7XV7XV7XV7XV7XV7XV7",
+      "secret_key": "SAV76USXIJOBREAKA7XFMLYR6BYXE6F7ULBK5UCAJPX2PX2TJDV5"
+    },
+    "issuer_account": {
+      "public_key": "GDW6AUTBXTOF7SGBR5CJIRKXLK5T54UNOTJTUW2OEZVYRRTPIRHZPX",
+      "secret_key": "SBIL2AQRXIWMOF7VGUH3WKC4P4TZX7JLQ7X6PQK4YV57T3UJGQ"
+    }
+  },
+  "assets": {
+    "SAMPLE": {
+      "code": "SAMPLE",
+      "issuer": "GDW6AUTBXTOF7SGBR5CJIRKXLK5T54UNOTJTUW2OEZVYRRTPIRHZPX",
+      "name": "Sample Asset",
+      "desc": "Sample asset created using StellarInterface",
+      "domain": "example.com",
+      "url": "https://example.com/asset",
+      "precision": 7,
+      "tick_size": "0.0000001"
+    }
+  },
+  "transaction": {
+    "fee": 100,
+    "timeout": 30
+  }
+}
