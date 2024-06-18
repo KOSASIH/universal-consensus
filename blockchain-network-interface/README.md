@@ -11,11 +11,11 @@ The Blockchain Network Interface (BNI) is a critical component of the Universal 
 This file contains the core implementation of the Blockchain Network Interface. It provides a set of APIs for interacting with blockchain networks, including methods for sending and receiving transactions, querying blockchain state, and more.
 
 - models
-- 
+
 This directory contains data models used by the BNI to represent blockchain-specific data structures, such as transactions, blocks, and smart contracts.
 
 - controllers
-- 
+
 This directory contains controller classes that implement the business logic for interacting with blockchain networks. These controllers use the APIs provided by bc_network_interface.py to perform tasks such as transaction validation, block verification, and smart contract execution.
 
 - utils
