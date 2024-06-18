@@ -7,7 +7,7 @@ This repository contains the implementation of the Universal Consensus project, 
 To install requirements:
 
 ```setup
-pip install -r requirements.txt
+1. pip install -r requirements.txt
 ```
 
 - Python 3.6
@@ -44,19 +44,19 @@ You need to modify the data_path in config files, i.e., config.root
 Train on one transfer of Office:
 
 ```
-CUDA_VISIBLE_DEVICES=0 python office_run.py note=EXP_NAME setting=uda/osda/pda source=amazon target=dslr
+1. CUDA_VISIBLE_DEVICES=0 python office_run.py note=EXP_NAME setting=uda/osda/pda source=amazon target=dslr
 ```
 
 To train on six transfers of Office:
 
 ```
-CUDA_VISIBLE_DEVICES=0 python office_run.py note=EXP_NAME setting=uda/osda/pda transfer_all=1
+1. CUDA_VISIBLE_DEVICES=0 python office_run.py note=EXP_NAME setting=uda/osda/pda transfer_all=1
 ```
 
 Train on OfficeHome:
 
 ```
-CUDA_VISIBLE_DEVICES=0 python office_run.py note=EXP_NAME setting=uda/osda/pda source=Art target=Product
+1. CUDA_VISIBLE_DEVICES=0 python office_run.py note=EXP_NAME setting=uda/osda/pda source=Art target=Product
 ```
 
 office_run.py
