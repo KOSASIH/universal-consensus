@@ -63,7 +63,7 @@ Join our community of developers, researchers, and blockchain enthusiasts to sta
 - Twitter: https://twitter.com/universalconsensus
 
 ## License
-Universal Consensus is licensed under the MIT License. See LICENSE for more information.
+Universal Consensus is licensed under the Apache-2.0 License. See LICENSE for more information.
 
 ## Acknowledgments
 
