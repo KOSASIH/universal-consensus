@@ -1,0 +1,38 @@
+# Python files
+__pycache__/
+*.pyc
+
+# Docker files
+docker-compose.yml
+Dockerfile
+
+# Virtual environment files
+venv/
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# Log files
+logs/
+*.log
+
+# Database files
+postgres-data/
+
+# Node modules
+node_modules/
+
+# Coverage files
+coverage/
+*.coverage
+
+# Test files
+tests/__pycache__/
+tests/*.pyc
+
+# Other files
+*.iml
+*.swp
+*.swo
