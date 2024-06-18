@@ -14,5 +14,5 @@ pytest-cov==2.12.1
 coverage==6.3.2
 
 # Additional dependencies for development
-ipython==7.24.1
+ipython==8.10.0
 jupyter==1.0.0
