@@ -30,7 +30,7 @@ TESTS_REQUIRE = [
 # Define the development dependencies
 EXTRA_REQUIRE = {
     "dev": [
-        "ipython==7.24.1",
+        "ipython==8.10.0",
         "jupyter==1.0.0",
     ],
 }
