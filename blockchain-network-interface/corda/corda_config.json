@@ -1,0 +1,7 @@
+{
+    "node_url": "http://localhost:10000",
+    "node_username": "user1",
+    "node_password": "password1",
+    "wallet_path": "/path/to/wallet",
+    "wallet_password": "wallet_password"
+}
