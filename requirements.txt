@@ -7,6 +7,12 @@ sqlalchemy==1.4.25
 psycopg2-binary==2.9.1
 requests==2.32.2
 cryptography==42.0.4
+cirq==0.11.0
+numpy==1.20.0
+ruamel.yaml.clib==0.2.2
+ruamel.yaml==0.17.3
+yamlpath==3.5.0
+plumbum==1.7.0
 
 # Additional dependencies for testing
 pytest==6.2.4
