@@ -1,0 +1,17 @@
+{
+  "network_id": "omnia_chain",
+  "node_id": "node1",
+  "listen_addr": "0.0.0.0:30303",
+  "public_addr": "omniachain.io:30303",
+  "peers": [
+    "node2:30303",
+    "node3:30303"
+  ],
+  "bootstrap_nodes": [
+    "node4:30303",
+    "node5:30303"
+  ],
+  "max_peers": 100,
+  "max_pending_transactions": 1000,
+  "transaction_pool_size": 10000
+}
