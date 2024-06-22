@@ -44,4 +44,4 @@ License
 
 OmniaChain is licensed under the Apache License 2.0.
 
-Copyright 2023 OmniaChain Foundation
+Copyright 2024 OmniaChain Foundation
