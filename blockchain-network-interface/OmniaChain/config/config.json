@@ -1,0 +1,57 @@
+{
+  "network": {
+    "name": "OmniaChain",
+    "version": "1.0",
+    "chain_id": "omnia_chain",
+    "token_symbol": "OMN",
+    "token_decimals": 18,
+    "block_time": 10,
+    "block_reward": 1000,
+    "gas_limit": 1000000,
+    "gas_price": 20
+  },
+  "consensus": {
+    "algorithm": "hybrid",
+    "dpos": {
+      "validators": 21,
+      "block_time": 10,
+      "validator_reward": 500
+    },
+    "bft": {
+      "threshold": 2/3,
+      "block_time": 30
+    },
+    "leader": {
+      "election_time": 60,
+      "leader_reward": 1000
+    }
+  },
+  "sharding": {
+    "num_shards": 16,
+    "shard_size": 100,
+    "shard_reward": 500
+  },
+  "storage": {
+    "ipfs": {
+      "enabled": true,
+      "gateway": "https://ipfs.io/ipfs/"
+    },
+    "storage_network": {
+      "enabled": true,
+      "nodes": ["node1", "node2", "node3"]
+    }
+  },
+  "smart_contracts": {
+    "enabled": true,
+    "languages": ["Rust", "Haskell", "JavaScript"],
+    "compilers": ["rustc", "ghc", "nodejs"]
+  },
+  "wallet": {
+    "enabled": true,
+    "types": ["hd", "ledger", "trezor"]
+  },
+  "explorer": {
+    "enabled": true,
+    "api": "https://explorer.omniachain.io/api"
+  }
+}
