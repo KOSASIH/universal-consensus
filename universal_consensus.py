@@ -1,75 +1,106 @@
-# Importing necessary libraries and frameworks
-import numpy as np
-import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
-from tensorflow.keras.models import Sequential
-from cosmosdb import CosmosDB
-from blockchain import Blockchain
+import threading
+import time
+import random
+import logging
 
-# Defining the Universal Consensus class
 class UniversalConsensus:
-    def __init__(self, blockchain_network, cosmosdb_instance):
-        self.blockchain_network = blockchain_network
-        self.cosmosdb_instance = cosmosdb_instance
-        self.consensus_algorithms = ['Paxos', 'Raft', 'PBFT', 'Byzantine Fault Tolerance']
-        self.machine_learning_models = ['Random Forest', 'Neural Network', 'Support Vector Machine']
-        self.data_processing_frameworks = ['Apache Spark', 'Dask', 'Ray']
+    def __init__(self, nodes, quorum_size, timeout=10, max_retries=3):
+        self.nodes = nodes
+        self.quorum_size = quorum_size
+        self.timeout = timeout
+        self.max_retries = max_retries
+        self.lock = threading.Lock()
+        self.cond = threading.Condition(self.lock)
+        self.proposals = {}
+        self.votes = {}
+        self.consensus_value = None
+        self.logger = logging.getLogger(__name__)
 
-    def initialize_consensus(self):
-        # Initialize the consensus algorithm
-        self.consensus_algorithm = self.select_consensus_algorithm()
-        self.consensus_algorithm.initialize()
+    def propose(self, node, value):
+        with self.lock:
+            if node not in self.proposals:
+                self.proposals[node] = value
+                self.logger.info(f"Proposal from node {node}: {value}")
+                self.cond.notify_all()
+            else:
+                self.logger.warning(f"Node {node} has already proposed a value")
 
-    def select_consensus_algorithm(self):
-        # Select the most suitable consensus algorithm based on the blockchain network
-        if self.blockchain_network == 'Ethereum':
-            return Paxos()
-        elif self.blockchain_network == 'Hyperledger Fabric':
-            return Raft()
-        else:
-            return PBFT()
+    def vote(self, node, proposal_node, value):
+        with self.lock:
+            if proposal_node in self.proposals:
+                if node not in self.votes:
+                    self.votes[node] = (proposal_node, value)
+                    self.logger.info(f"Vote from node {node} for proposal from node {proposal_node}: {value}")
+                    self.cond.notify_all()
+                else:
+                    self.logger.warning(f"Node {node} has already voted")
+            else:
+                self.logger.warning(f"No proposal from node {proposal_node} to vote on")
 
-    def process_data(self, data):
-        # Process the data using the selected machine learning model
-        if self.machine_learning_model == 'Random Forest':
-            return self.random_forest_model.predict(data)
-        elif self.machine_learning_model == 'Neural Network':
-            return self.neural_network_model.predict(data)
-        else:
-            return self.support_vector_machine_model.predict(data)
+    def get_consensus(self, node):
+        with self.lock:
+            while self.consensus_value is None:
+                self.cond.wait(self.timeout)
+                if self.timeout_reached():
+                    self.logger.error("Timeout reached, no consensus achieved")
+                    return None
+            return self.consensus_value
 
-    def store_data(self, data):
-        # Store the data in the CosmosDB instance
-        self.cosmosdb_instance.insert_data(data)
+    def timeout_reached(self):
+        return time.time() - self.start_time > self.timeout
 
-    def retrieve_data(self):
-        # Retrieve the data from the CosmosDB instance
-        return self.cosmosdb_instance.retrieve_data()
+    def run_consensus(self):
+        self.start_time = time.time()
+        while True:
+            with self.lock:
+                if len(self.votes) >= self.quorum_size:
+                    self.consensus_value = self.determine_consensus()
+                    self.logger.info(f"Consensus achieved: {self.consensus_value}")
+                    break
+                elif self.timeout_reached():
+                    self.logger.error("Timeout reached, no consensus achieved")
+                    break
+                else:
+                    self.cond.wait(self.timeout)
 
-    def visualize_data(self, data):
-        # Visualize the data using the selected data processing framework
-        if self.data_processing_framework == 'Apache Spark':
-            return self.apache_spark_framework.visualize(data)
-        elif self.data_processing_framework == 'Dask':
-            return self.dask_framework.visualize(data)
-        else:
-            return self.ray_framework.visualize(data)
+    def determine_consensus(self):
+        # Simple majority vote for now, can be replaced with more advanced algorithms
+        votes = {}
+        for node, (proposal_node, value) in self.votes.items():
+            if value not in votes:
+                votes[value] = 1
+            else:
+                votes[value] += 1
+        max_votes = max(votes.values())
+        consensus_value = [value for value, count in votes.items() if count == max_votes][0]
+        return consensus_value
 
-# Creating an instance of the Universal Consensus class
-universal_consensus = UniversalConsensus('Ethereum', CosmosDB('https://cosmosdb-instance.azure.com'))
+    def start(self):
+        threading.Thread(target=self.run_consensus).start()
 
-# Initializing the consensus algorithm
-universal_consensus.initialize_consensus()
+    def stop(self):
+        self.lock.acquire()
+        self.cond.notify_all()
+        self.lock.release()
 
-# Processing data
-data = pd.read_csv('data.csv')
-processed_data = universal_consensus.process_data(data)
+# Example usage
+if __name__ == "__main__":
+    nodes = ["Node1", "Node2", "Node3", "Node4", "Node5"]
+    quorum_size = 3
+    consensus = UniversalConsensus(nodes, quorum_size)
+    consensus.start()
 
-# Storing data
-universal_consensus.store_data(processed_data)
+    # Propose values from different nodes
+    consensus.propose("Node1", "Value1")
+    consensus.propose("Node2", "Value2")
+    consensus.propose("Node3", "Value3")
 
-# Retrieving data
-retrieved_data = universal_consensus.retrieve_data()
+    # Vote on proposals
+    consensus.vote("Node1", "Node1", "Value1")
+    consensus.vote("Node2", "Node1", "Value1")
+    consensus.vote("Node3", "Node2", "Value2")
+    consensus.vote("Node4", "Node2", "Value2")
+    consensus.vote("Node5", "Node3", "Value3")
 
-# Visualizing data
-visualized_data = universal_consensus.visualize_data(retrieved_data)
+    # Get consensus value
+    print(consensus.get_consensus("Node1"))  # Should print "Value1"
