@@ -2,55 +2,56 @@ package block
 
 import (
 	"crypto/sha256"
-	"encoding/json"
-	"fmt"
+	"encoding/hex"
 	"time"
-
-	"github.com/KOSASIH/universal-consensus/blockchain-network-interface/OmniaChain/transaction"
 )
 
 type Block struct {
 	Header     BlockHeader
-	Transactions []*transaction.Transaction
+	Transactions []Transaction
 }
 
 type BlockHeader struct {
 	Hash         string
-	PrevHash     string
+	PreviousHash string
 	Timestamp    time.Time
 	Nonce        uint64
 	Difficulty   uint64
-	MerkleRoot   string
 }
 
-func NewBlock(transactions []*transaction.Transaction, prevHash string) *Block {
+type Transaction struct {
+	ID        string
+	Timestamp time.Time
+	Sender    string
+	Recipient string
+	Amount    uint64
+}
+
+func NewBlock(transactions []Transaction, previousHash string) *Block {
 	block := &Block{
 		Header: BlockHeader{
 			Timestamp: time.Now(),
-			Nonce:     0,
-			Difficulty: 1,
-			MerkleRoot: calculateMerkleRoot(transactions),
+			PreviousHash: previousHash,
 		},
 		Transactions: transactions,
 	}
 
-	block.Header.Hash = calculateBlockHash(block)
-	block.Header.PrevHash = prevHash
-
+	block.Header.Hash = calculateHash(block)
 	return block
 }
 
-func calculateBlockHash(block *Block) string {
+func calculateHash(block *Block) string {
 	hash := sha256.New()
-	hash.Write([]byte(fmt.Sprintf("%v", block.Header)))
-	hash.Write([]byte(fmt.Sprintf("%v", block.Transactions)))
-	return fmt.Sprintf("%x", hash.Sum(nil))
+	hash.Write([]byte(block.Header.Timestamp.String()))
+	hash.Write([]byte(block.Header.PreviousHash))
+	hash.Write([]byte(stringifyTransactions(block.Transactions)))
+	return hex.EncodeToString(hash.Sum(nil))
 }
 
-func calculateMerkleRoot(transactions []*transaction.Transaction) string {
-	hash := sha256.New()
+func stringifyTransactions(transactions []Transaction) string {
+	var txString string
 	for _, tx := range transactions {
-		hash.Write([]byte(tx.ID))
+		txString += tx.ID + tx.Sender + tx.Recipient + string(tx.Amount)
 	}
-	return fmt.Sprintf("%x", hash.Sum(nil))
+	return txString
 }
