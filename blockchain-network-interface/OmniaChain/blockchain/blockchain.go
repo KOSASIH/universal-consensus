@@ -5,6 +5,7 @@ import (
 	"sync"
 
 	"github.com/KOSASIH/universal-consensus/blockchain-network-interface/OmniaChain/block"
+	"github.com/KOSASIH/universal-consensus/blockchain-network-interface/OmniaChain/utils"
 )
 
 type Blockchain struct {
@@ -29,7 +30,7 @@ func (bc *Blockchain) AddBlock(block *block.Block) error {
 		return nil
 	}
 
-	if block.Header.PreviousHash!= bc.currentBlock.Header.Hash {
+	if block.Header.PreviousHash != bc.currentBlock.Header.Hash {
 		return fmt.Errorf("invalid block: previous hash mismatch")
 	}
 
