@@ -4,6 +4,8 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 	"time"
+
+	"github.com/KOSASIH/universal-consensus/blockchain-network-interface/OmniaChain/utils"
 )
 
 type Block struct {
