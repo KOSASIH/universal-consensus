@@ -6,6 +6,7 @@ import (
 
 	"github.com/KOSASIH/universal-consensus/blockchain-network-interface/OmniaChain/block"
 	"github.com/KOSASIH/universal-consensus/blockchain-network-interface/OmniaChain/blockchain"
+	"github.com/KOSASIH/universal-consensus/blockchain-network-interface/OmniaChain/utils"
 )
 
 func main() {
@@ -31,7 +32,7 @@ func main() {
 
 	// Add the block to the blockchain
 	err := bc.AddBlock(block)
-	if err!= nil {
+	if err != nil {
 		log.Fatal(err)
 	}
 
@@ -50,7 +51,7 @@ func main() {
 
 	// Add the new block to the blockchain
 	err = bc.AddBlock(newBlock)
-	if err!= nil {
+	if err != nil {
 		log.Fatal(err)
 	}
 
