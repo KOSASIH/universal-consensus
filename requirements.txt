@@ -13,6 +13,8 @@ ruamel.yaml.clib==0.2.2
 ruamel.yaml==0.17.3
 yamlpath==3.5.0
 plumbum==1.7.0
+pyzmq
+cryptography
 
 # Additional dependencies for testing
 pytest==6.2.4
