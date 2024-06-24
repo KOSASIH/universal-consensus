@@ -11,7 +11,7 @@ A Git repo for a blockchain platform that aims to provide a universal standard f
 
 # Universal Consensus
 
-A Blockchain Platform for Universal Consensus Algorithms
+A high-tech, advanced, decentralized consensus algorithm implementation for the universe !
 
 ## Introduction
 
