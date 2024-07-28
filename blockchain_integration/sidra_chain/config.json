@@ -1,0 +1,45 @@
+{
+  "api": {
+    "url": "https://api.sidrachain.com",
+    "key": "your_api_key"
+  },
+  "contracts": {
+    "ModelTrainingContract": {
+      "address": "0x1234567890abcdef",
+      "code": "model_training_contract_code"
+    },
+    "PaymentContract": {
+      "address": "0x9876543210fedcba",
+      "code": "payment_contract_code"
+    }
+  },
+  "consensus": {
+    "validatorGroup": [
+      "0x1234567890abcdef",
+      "0x9876543210fedcba",
+      "0x4567890123456789"
+    ],
+    "crossChainRequest": {
+      "transactionId": "0x1234567890abcdef",
+      "validatorGroup": [
+        "0x1234567890abcdef",
+        "0x9876543210fedcba",
+        "0x4567890123456789"
+      ]
+    }
+  },
+  "features": {
+    "add": [
+      "new_feature_1",
+      "new_feature_2"
+    ],
+    "update": [
+      "existing_feature_1",
+      "existing_feature_2"
+    ],
+    "upgrade": [
+      "existing_feature_3",
+      "existing_feature_4"
+    ]
+  }
+}
