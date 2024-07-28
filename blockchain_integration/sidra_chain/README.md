@@ -52,4 +52,9 @@ The Sidra Chain integration is licensed under the MIT License.
 
 ## Acknowledgments
 
-The Sidra Chain integration was developed by [KOSASIH](https://github.com/KOSASIH).
+* The Sidra Chain integration was developed by [KOSASIH](https://github.com/KOSASIH).
+* Thank you to Sidra Chain Owner [Mohammed Al Jefairi](https://github.com/maljefairi).
+* All contributors
+
+
+                       Sidra To The Moon.. InshaAllah ..  ☺ ..  ☕
