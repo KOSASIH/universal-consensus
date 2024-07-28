@@ -77,3 +77,18 @@ class SidraChainConsensus:
         # Implement the rollback and release of locked assets
         # ...
         pass
+
+    def add_feature(self, feature_name):
+        # Implement the addition of new features to the Sidra Chain consensus mechanism
+        # ...
+        pass
+
+    def update_feature(self, feature_name):
+        # Implement the update of existing features in the Sidra Chain consensus mechanism
+        # ...
+        pass
+
+    def upgrade_feature(self, feature_name):
+        # Implement the upgrade of existing features in the Sidra Chain consensus mechanism
+        # ...
+        pass
