@@ -8,6 +8,7 @@ Sidra Chain is a blockchain-based platform for secure and transparent data shari
 * Secure data sharing
 * Transparent transaction history
 * Immutable blockchain
+* etc
 
 ## Installation
 
