@@ -1,0 +1,107 @@
+.main-app {
+  text-align: center;
+  margin: 100px;
+}
+
+.cta-button {
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  min-width: 250px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.connect-wallet-button {
+  background: rgb(32, 129, 226);
+}
+
+.mint-nft-button {
+  background: orange;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  width: 250px;
+  text-align: center;
+}
+
+.product img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.product h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.product p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.product button {
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.product button:hover {
+  background: #333;
+  color: white;
+}
+
+.selected-product {
+  background: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  width: 250px;
+  text-align: center;
+}
+
+.selected-product h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.selected-product p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.dispute {
+  background: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  width: 250px;
+  text-align: center;
+}
+
+.dispute h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.dispute p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
