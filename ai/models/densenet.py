@@ -65,4 +65,74 @@ class DenseBlock(nn.Module):
         out = self.relu(out)
         out = self.conv2(out)
         out = self.bn2(out)
-        out =
+                out = torch.cat([x, out], 1)
+        return out
+
+def load_model(model_name, num_classes):
+    model = DenseNetModel(num_classes)
+    if model_name == "densenet121":
+        model.load_state_dict(torch.load("densenet121.pth"))
+    elif model_name == "densenet169":
+        model.load_state_dict(torch.load("densenet169.pth"))
+    elif model_name == "densenet201":
+        model.load_state_dict(torch.load("densenet201.pth"))
+    return model
+
+def train_model(model, device, loader, optimizer, epoch):
+    model.train()
+    for batch_idx, (data, labels) in enumerate(loader):
+        data, labels = data.to(device), labels.to(device)
+        optimizer.zero_grad()
+        outputs = model(data)
+        loss = nn.CrossEntropyLoss()(outputs, labels)
+        loss.backward()
+        optimizer.step()
+        print(f'Epoch {epoch+1}, Batch {batch_idx+1}, Loss: {loss.item()}')
+
+def test_model(model, device, loader):
+    model.eval()
+    test_loss = 0
+    correct = 0
+    with torch.no_grad():
+        for data, labels in loader:
+            data, labels = data.to(device), labels.to(device)
+            outputs = model(data)
+            loss = nn.CrossEntropyLoss()(outputs, labels)
+            test_loss += loss.item()
+            _, predicted = torch.max(outputs, 1)
+            correct += (predicted == labels).sum().item()
+
+    accuracy = correct / len(loader.dataset)
+    print(f'Test Loss: {test_loss / len(loader)}')
+    print(f'Test Accuracy: {accuracy:.2f}%')
+
+def main():
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    num_classes = 10
+    model_name = "densenet121"
+
+    # Load the dataset
+    train_dataset = datasets.CIFAR10(root='./data', train=True, download=True, transform=transforms.ToTensor())
+    test_dataset = datasets.CIFAR10(root='./data', train=False, download=True, transform=transforms.ToTensor())
+
+    # Create data loaders
+    train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
+    test_loader = DataLoader(test_dataset, batch_size=64, shuffle=False)
+
+    # Load the model
+    model = load_model(model_name, num_classes)
+
+    # Define the optimizer and scheduler
+    optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
+    scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.1)
+
+    # Train the model
+    for epoch in range(100):
+        train_model(model, device, train_loader, optimizer, epoch)
+        scheduler.step()
+
+    # Test the model
+    test_model(model, device, test_loader)
+
+if __name__ == '__main__':
+    main()
