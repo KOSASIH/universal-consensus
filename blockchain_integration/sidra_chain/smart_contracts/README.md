@@ -36,7 +36,7 @@ Contributions are welcome! Please submit a pull request with your changes.
 
 ## License
 
-Sidra Chain is licensed under the MIT License.
+Sidra Chain is licensed under the GPL 3.0 License.
 
 ## Acknowledgments
 
