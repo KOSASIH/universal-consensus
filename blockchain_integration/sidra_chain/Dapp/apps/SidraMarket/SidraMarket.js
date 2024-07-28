@@ -1,3 +1,42 @@
+import React, { useState, useEffect } from 'react';
+import Web3 from 'web3';
+
+const SidraMarket = () => {
+    const [products, setProducts] = useState([]);
+    const [orders, setOrders] = useState([]);
+    const [reputationScores, setReputationScores] = useState({});
+
+    useEffect(() => {
+        const web3 = new Web3(window.ethereum);
+        const contract = new web3.eth.Contract(SidraMarket.abi, SidraMarket.address);
+
+        contract.methods.getProducts().call().then((products) => {
+            setProducts(products);
+        });
+
+        contract.methods.getOrders().call().then((orders) => {
+            setOrders(orders);
+        });
+
+        contract.methods.getReputationScores().call().then((reputationScores) => {
+            setReputationScores(reputationScores);
+        });
+    }, []);
+
+    const addProduct = (id, name, description, price) => {
+        const web3 = new Web3(window.ethereum);
+        const contract = new web3.eth.Contract(SidraMarket.abi, SidraMarket.address);
+
+        contract.methods.addProduct(id, name, description, price).send({ from: window.ethereum.selectedAddress });
+    };
+
+    const placeOrder = (id, buyer, productId, quantity) => {
+        const web3 = new Web3(window.ethereum);
+        const contract = new web3.eth.Contract(SidraMarket.abi, SidraMarket.address);
+
+        contract.methods.placeOrder(id, buyer, productId, quantity).send({ from: window.ethereum.selectedAddress });
+    };
+
 const fulfillOrder = (id, buyer) => {
     const web3 = new Web3(window.ethereum);
     const contract = new web3.eth.Contract(SidraMarket.abi, SidraMarket.address);
