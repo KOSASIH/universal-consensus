@@ -37,8 +37,20 @@ export const deleteOrder = (id) => async (dispatch) => {
   }
 };
 
-export const fetchOrder = (id) => async (dispatch) => {
+export const updateOrderStatus = (id, status) => async (dispatch) => {
   try {
-    const response = await axios.get(`/api/orders/${id}`);
+    const response = await axios.put(`/api/orders/${id}/status`, { status });
     dispatch({ type: SET_ORDER, payload: response.data });
+  } catch (error) {
+    console.error(error);
   }
+};
+
+export const cancelOrder = (id) => async (dispatch) => {
+  try {
+    await axios.delete(`/api/orders/${id}`);
+    dispatch({ type: SET_ORDERS, payload: [] });
+  } catch (error) {
+    console.error(error);
+  }
+};
