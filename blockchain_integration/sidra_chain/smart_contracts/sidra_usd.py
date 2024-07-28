@@ -1,70 +1,80 @@
-# -*- coding: utf-8 -*-
+import smart_contract
+import blockchain
+import cryptography
 
-# Import necessary libraries
-from solidity import contract, interface
-from solidity.types import uint256, address, bytes32
-from solidity.functions import pure, view, payable
+class SidraUSD(smart_contract.SmartContract):
+    def __init__(self):
+        super().__init__()
+        self.name = "Sidra USD"
+        self.symbol = "SUSD"
+        self.decimals = 18
+        self.total_supply = 100000000
+        self.balances = {}
 
-# Define the Sidra USD contract
-@contract
-class SidraUSD:
-    # Define the contract variables
-    _name: bytes32 = 'Sidra USD'
-    _symbol: bytes32 = 'SDUSD'
-    _decimals: uint256 = 18
-    _total_supply: uint256 = 100000000 * (10 ** _decimals)
-    _owner: address
+    def transfer(self, sender, recipient, amount):
+        if sender not in self.balances:
+            raise ValueError("Sender does not have a balance")
+        if recipient not in self.balances:
+            self.balances[recipient] = 0
+        if amount > self.balances[sender]:
+            raise ValueError("Insufficient balance")
+        self.balances[sender] -= amount
+        self.balances[recipient] += amount
+        blockchain.broadcast_transaction(self, sender, recipient, amount)
 
-    # Define the contract events
-    Transfer: event({_from: address, _to: address, _value: uint256})
-    Approval: event({_owner: address, _spender: address, _value: uint256})
+    def balance_of(self, account):
+        return self.balances.get(account, 0)
 
-    # Define the contract constructor
-    def __init__(_owner: address):
-        self._owner = _owner
+    def mint(self, amount):
+        if amount > self.total_supply:
+            raise ValueError("Cannot mint more than total supply")
+        self.total_supply -= amount
+        self.balances[self.owner] += amount
 
-    # Define the transfer function
-    @payable
-    def transfer(_to: address, _value: uint256) -> bool:
-        if _value > 0 and _to != address(0):
-            if self.balanceOf(msg.sender) >= _value:
-                self.balanceOf[msg.sender] -= _value
-                self.balanceOf[_to] += _value
-                emit Transfer(msg.sender, _to, _value)
-                return True
-        return False
+    def burn(self, amount):
+        if amount > self.balances[self.owner]:
+            raise ValueError("Insufficient balance")
+        self.balances[self.owner] -= amount
+        self.total_supply += amount
 
-    # Define the approve function
-    def approve(_spender: address, _value: uint256) -> bool:
-        if _spender != address(0):
-            self.allowance[msg.sender][_spender] = _value
-            emit Approval(msg.sender, _spender, _value)
-            return True
-        return False
+    def get_owner(self):
+        return self.owner
 
-    # Define the transferFrom function
-    @payable
-    def transferFrom(_from: address, _to: address, _value: uint256) -> bool:
-        if _value > 0 and _to != address(0) and _from != address(0):
-            if self.balanceOf(_from) >= _value and self.allowance[_from][msg.sender] >= _value:
-                self.balanceOf[_from] -= _value
-                self.balanceOf[_to] += _value
-                self.allowance[_from][msg.sender] -= _value
-                emit Transfer(_from, _to, _value)
-                return True
-        return False
+    def set_owner(self, new_owner):
+        self.owner = new_owner
 
-    # Define the balanceOf function
-    @view
-    def balanceOf(_owner: address) -> uint256:
-        return self.balanceOf[_owner]
+    def get_name(self):
+        return self.name
 
-    # Define the allowance function
-    @view
-    def allowance(_owner: address, _spender: address) -> uint256:
-        return self.allowance[_owner][_spender]
+    def get_symbol(self):
+        return self.symbol
 
-    # Define the totalSupply function
-    @view
-    def totalSupply() -> uint256:
-        return self._total_supply
+    def get_decimals(self):
+        return self.decimals
+
+    def get_total_supply(self):
+        return self.total_supply
+
+    def get_balances(self):
+        return self.balances
+
+    def verify_transaction(self, transaction):
+        sender = transaction["sender"]
+        recipient = transaction["recipient"]
+        amount = transaction["amount"]
+        if sender not in self.balances:
+            raise ValueError("Sender does not have a balance")
+        if recipient not in self.balances:
+            self.balances[recipient] = 0
+        if amount > self.balances[sender]:
+            raise ValueError("Insufficient balance")
+        return True
+
+    def sign_transaction(self, transaction):
+        private_key = self.owner_private_key
+        signature = cryptography.sign(transaction, private_key)
+        return signature
+
+    def verify_signature(self, transaction, signature):
+        public_key = self.owner_public_key
+        return cryptography.verify(transaction, signature, public_key)
