@@ -1,5 +1,4 @@
 ![Static Badge](https://img.shields.io/badge/Universal-Consensus-gold)
-[![CodeFactor](https://www.codefactor.io/repository/github/kosasih/universal-consensus/badge/main)](https://www.codefactor.io/repository/github/kosasih/universal-consensus/overview/main)
 [![StackHawk](https://github.com/KOSASIH/universal-consensus/actions/workflows/stackhawk.yml/badge.svg)](https://github.com/KOSASIH/universal-consensus/actions/workflows/stackhawk.yml)
 [![CodeQL](https://github.com/KOSASIH/universal-consensus/actions/workflows/codeql.yml/badge.svg)](https://github.com/KOSASIH/universal-consensus/actions/workflows/codeql.yml)
 
