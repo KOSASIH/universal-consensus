@@ -42,7 +42,7 @@
 [![The International Council on Clean Transportation (ICCT)](https://img.shields.io/badge/ICCT-Recognition-lightblue)](https://theicct.org/)
 [![The Global Partnership for Education](https://img.shields.io/badge/Global%20Partnership%20for%20Education-Recognition-blue)](https://www.globalpartnership.org/)
 [![The International Data Corporation (IDC)](https://img.shields.io/badge/IDC-Recognition-orange)](https://www.idc.com/)
-[![The International Society for Technology in Education (ISTE)](https://img.shields.io/badge/ISTE-Recognition-blue)](https://www.iste.org/)
+
 [![The International Association of Privacy Professionals (IAPP)](https://img.shields.io/badge/IAPP-Recognition-purple)](https://iapp.org/)
 [![The International Federation of Accountants (IFAC)](https://img.shields.io/badge/IFAC-Recognition-green)](https://www.ifac.org/)
 [![The International Cyber Security Organization (ICSO)](https://img.shields.io/badge/ICSO-Recognition-orange)](https://www.icsociety.org/)
