@@ -86,7 +86,6 @@
 [![The International Federation of Red Cross and Red Crescent Societies (IFRC)](https://img.shields.io/badge/IFRC-Recognition-red)](https://www.ifrc.org/)
 [![The International Organization for Migration (IOM)](https://img.shields.io/badge/IOM-Recognition-green)](https://www.iom.int/)
 [![The International Chamber of Commerce (ICC)](https://img.shields.io/badge/ICC-Recognition-blue)](https://iccwbo.org/)
-[![The International Monetary Fund (IMF)](https://img.shields.io/badge/IMF-Recognition-lightblue)](https://www.imf.org/)
 [![The World Trade Organization (WTO)](https://img.shields.io/badge/WTO-Recognition-red)](https://www.wto.org/)
 [![The World Economic Forum (WEF)](https://img.shields.io/badge/WEF-Recognition-orange)](https://www.weforum.org/)
 [![The International Telecommunication Union (ITU)](https://img.shields.io/badge/ITU-Recognition-orange)](https://www.itu.int/en/ITU-T/Pages/default.aspx)
@@ -109,7 +108,6 @@
 [![The International Federation of Red Cross and Red Crescent Societies (IFRC)](https://img.shields.io/badge/IFRC-Recognition-red)](https://www.ifrc.org/)
 [![The International Organization for Migration (IOM)](https://img.shields.io/badge/IOM-Recognition-green)](https://www.iom.int/)
 [![The International Chamber of Commerce (ICC)](https://img.shields.io/badge/ICC-Recognition-blue)](https://iccwbo.org/)
-[![The International Monetary Fund (IMF)](https://img.shields.io/badge/IMF-Recognition-lightblue)](https://www.imf.org/)
 
 [![ISO/IEC 27001 Certification](https://img.shields.io/badge/ISO%2FIEC%2027001-Certification-blue)](https://www.iso.org/isoiec-27001-information-security.html)
 [![IEEE Standards Association](https://img.shields.io/badge/IEEE%20Standards%20Association-Recognition-orange)](https://standards.ieee.org/)
