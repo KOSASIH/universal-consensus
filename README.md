@@ -2,7 +2,7 @@
 [![StackHawk](https://github.com/KOSASIH/universal-consensus/actions/workflows/stackhawk.yml/badge.svg)](https://github.com/KOSASIH/universal-consensus/actions/workflows/stackhawk.yml)
 [![CodeQL](https://github.com/KOSASIH/universal-consensus/actions/workflows/codeql.yml/badge.svg)](https://github.com/KOSASIH/universal-consensus/actions/workflows/codeql.yml)
 
-# Certifications, Awards, and Recognitions
+# Universal Consensus Certifications, Awards, and Recognitions
 
 [![ISO/IEC 27001 Certification](https://img.shields.io/badge/ISO%2FIEC%2027001-Certification-blue)](https://www.iso.org/isoiec-27001-information-security.html)
 [![IEEE Standards Association](https://img.shields.io/badge/IEEE%20Standards%20Association-Recognition-orange)](https://standards.ieee.org/)
@@ -22,6 +22,15 @@
 [![Forbes Fintech 50](https://img.shields.io/badge/Forbes%20Fintech%2050-Award-orange)](https://www.forbes.com/fintech/)
 [![TechCrunch Disrupt](https://img.shields.io/badge/TechCrunch%20Disrupt-Award-red)](https://techcrunch.com/events/disrupt/)
 [![MIT Technology Review Innovators Under 35](https://img.shields.io/badge/MIT%20Technology%20Review%20Innovators%20Under%2035-Award-green)](https://www.technologyreview.com/innovators-under-35/)
+[![SASB Standards](https://img.shields.io/badge/SASB%20Standards-Certification-lightgrey)](https://www.sasb.org/)
+[![B Corporation Certification](https://img.shields.io/badge/B%20Corporation%20Certification-green)](https://bcorporation.net/)
+[![Gartner Cool Vendor](https://img.shields.io/badge/Gartner%20Cool%20Vendor-Award-blue)](https://www.gartner.com/en/research/cool-vendors)
+[![Red Herring Top 100](https://img.shields.io/badge/Red%20Herring%20Top%20100-Award-orange)](https://www.redherring.com/events/red-herring-top-100/)
+[![European FinTech Awards](https://img.shields.io/badge/European%20FinTech%20Awards-Award-lightblue)](https://fintech-awards.com/)
+[![Techstars Accelerator](https://img.shields.io/badge/Techstars%20Accelerator-Program-yellowgreen)](https://www.techstars.com/)
+[![AWS Activate](https://img.shields.io/badge/AWS%20Activate-Program-blue)](https://aws.amazon.com/activate/)
+[![Google Cloud for Startups](https://img.shields.io/badge/Google%20Cloud%20for%20Startups-Program-red)](https://cloud.google.com/startup)
+[![Microsoft for Startups](https://img.shields.io/badge/Microsoft%20for%20Startups-Program-lightgrey)](https://startups.microsoft.com/)
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/KOSASIH/universal-consensus">Universal Consensus</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/kosasih-81b46b5a">KOSASIH</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
 
