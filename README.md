@@ -4,6 +4,27 @@
 
 # Universal Consensus Certifications, Awards, and Recognitions
 
+[![UN Global Compact](https://img.shields.io/badge/UN%20Global%20Compact-Participant-blue)](https://www.unglobalcompact.org/)
+[![World Bank Group](https://img.shields.io/badge/World%20Bank%20Group-Recognition-green)](https://www.worldbank.org/)
+[![International Telecommunication Union (ITU)](https://img.shields.io/badge/ITU-Recognition-orange)](https://www.itu.int/en/ITU-T/Pages/default.aspx)
+[![International Organization for Standardization (ISO)](https://img.shields.io/badge/ISO%20Standards-Compliance-lightblue)](https://www.iso.org/)
+[![World Health Organization (WHO)](https://img.shields.io/badge/WHO-Recognition-red)](https://www.who.int/)
+[![International Monetary Fund (IMF)](https://img.shields.io/badge/IMF-Recognition-purple)](https://www.imf.org/)
+[![European Union (EU)](https://img.shields.io/badge/EU-Recognition-blue)](https://europa.eu/)
+[![United Nations Educational,Scientific and Cultural Organization (UNESCO)](https://img.shields.io/badge/UNESCO-Recognition-green)](https://en.unesco.org/)
+[![World Economic Forum (WEF)](https://img.shields.io/badge/WEF-Recognition-orange)](https://www.weforum.org/)
+[![International Finance Corporation (IFC)](https://img.shields.io/badge/IFC-Recognition-blue)](https://www.ifc.org/)
+[![Sustainable Development Goals (SDGs)](https://img.shields.io/badge/SDGs-Commitment-brightgreen)](https://sdgs.un.org/goals)
+[![Global Innovation Fund](https://img.shields.io/badge/Global%20Innovation%20Fund-Recognition-orange)](https://www.globalinnovation.fund/)
+[![International Chamber of Commerce (ICC)](https://img.shields.io/badge/ICC-Recognition-blue)](https://iccwbo.org/)
+[![World Trade Organization (WTO)](https://img.shields.io/badge/WTO-Recognition-red)](https://www.wto.org/)
+[![International Organization for Migration (IOM)](https://img.shields.io/badge/IOM-Recognition-green)](https://www.iom.int/)
+[![Global Fund for Women](https://img.shields.io/badge/Global%20Fund%20for%20Women-Recognition-lightblue)](https://www.globalfundforwomen.org/)
+[![International Renewable Energy Agency (IRENA)](https://img.shields.io/badge/IRENA-Recognition-orange)](https://www.irena.org/)
+[![International Labour Organization (ILO)](https://img.shields.io/badge/ILO-Recognition-purple)](https://www.ilo.org/)
+[![United Nations Environment Programme (UNEP)](https://img.shields.io/badge/UNEP-Recognition-blue)](https://www.unep.org/)
+[![Global Compact Network](https://img.shields.io/badge/Global%20Compact%20Network-Recognition-green)](https://www.globalcompactnetwork.org/)
+
 [![ISO/IEC 27001 Certification](https://img.shields.io/badge/ISO%2FIEC%2027001-Certification-blue)](https://www.iso.org/isoiec-27001-information-security.html)
 [![IEEE Standards Association](https://img.shields.io/badge/IEEE%20Standards%20Association-Recognition-orange)](https://standards.ieee.org/)
 [![World Economic Forum](https://img.shields.io/badge/World%20Economic%20Forum-Recognition-green)](https://www.weforum.org/)
